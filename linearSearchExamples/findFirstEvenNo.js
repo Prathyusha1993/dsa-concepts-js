@@ -7,4 +7,4 @@ function findFirstEvenNumber(arr){
     return null;
 }
 
-console.log(findFirstEven([1, 3, 7, 8, 5]));
+console.log(findFirstEvenNumber([1, 3, 7, 8, 5]));
