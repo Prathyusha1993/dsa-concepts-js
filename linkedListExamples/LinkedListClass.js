@@ -105,6 +105,34 @@ class LinkedList{
         }
     }
 
+    search(value){
+        if(this.isEmpty()){
+            return -1;
+        }
+        let i=0
+        let curr = this.head;
+        while(curr){
+            if(curr.value === value){
+                return i;
+            }
+            curr = curr.next;
+            i++
+        }
+        return -1;
+    }
+
+    reverse(){
+        let prev = null;
+        let curr = this.head;
+        while(curr){
+            const next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        this.head = prev;
+    }
+
     print(){
         if(this.isEmpty()){
             console.log('Linked list is empty');
@@ -158,8 +186,16 @@ list.print();
 // list.print();
 // console.log(list.getSize());
 
-console.log(list.removeFromValue(40));
-list.print()
+// for remove 
+// console.log(list.removeFromValue(40));
+// list.print()
 
-console.log(list.removeFromValue(30));
-list.print()
+// console.log(list.removeFromValue(30));
+// list.print()
+
+// for search:
+// console.log(list.search(20));
+
+// for reverse:
+list.reverse();
+list.print();
